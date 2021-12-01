@@ -26,17 +26,28 @@ defmodule AOC do
   ]
 
   def main do
-    # calculate_velocity(@data)
-
     case File.read("dataset.txt") do
       {:ok, content} ->
         String.split(content, "\n")
         |> Enum.reject(&(&1 == ""))
         |> Enum.map(&String.to_integer/1)
+        |> prepare_windows()
         |> calculate_velocity
 
       {:error, reason} ->
         IO.puts("error: #{reason}")
+    end
+
+    # prepare_windows(@data)
+    # |> calculate_velocity()
+  end
+
+  def prepare_windows(data, acc \\ []) do
+    acc = acc ++ [Enum.take(data, 3) |> Enum.sum()]
+
+    case data do
+      data when length(data) == 3 -> acc
+      [_head | tail] -> prepare_windows(tail, acc)
     end
   end
 
