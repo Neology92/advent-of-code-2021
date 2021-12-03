@@ -1,4 +1,9 @@
 defmodule AOC.Day1 do
+  @moduledoc """
+    Part 1: ✅
+    Part 2: ✅
+  """
+
   alias AOC.Dataset
 
   def day1 do
