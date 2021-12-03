@@ -1,6 +1,5 @@
 defmodule AOC do
-  import AOC.Day1
-  import AOC.Day3
+  use Imports
 
   def main do
     IO.puts("Day1: #{day1()}\n")
