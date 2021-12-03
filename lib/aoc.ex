@@ -1,4 +1,5 @@
 defmodule AOC do
+  alias AOC.Dataset
   # use AOC.Day1
   # use AOC.Day2
 
@@ -18,18 +19,8 @@ defmodule AOC do
   ]
 
   def main do
-    # @test_data
-    # |> generate_rates()
-
-    case File.read("data/day3.txt") do
-      {:ok, content} ->
-        String.split(content, "\n")
-        |> Enum.reject(&(&1 == ""))
-        |> generate_rates
-
-      {:error, reason} ->
-        IO.puts("error: #{reason}")
-    end
+    Dataset.read!("data/day3.txt")
+    |> generate_rates
   end
 
   def generate_rates(input) do

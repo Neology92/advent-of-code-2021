@@ -6,17 +6,10 @@ defmodule AOC.Day1 do
       import AOC.Day1
 
       def day1 do
-        case File.read("data/day1.txt") do
-          {:ok, content} ->
-            String.split(content, "\n")
-            |> Enum.reject(&(&1 == ""))
-            |> Enum.map(&String.to_integer/1)
-            |> prepare_windows()
-            |> calculate_velocity()
-
-          {:error, reason} ->
-            IO.puts("error: #{reason}")
-        end
+        Dataset.read!("data/day3.txt")
+        |> Enum.map(&String.to_integer/1)
+        |> prepare_windows()
+        |> calculate_velocity()
       end
     end
   end
