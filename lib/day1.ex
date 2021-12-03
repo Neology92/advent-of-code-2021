@@ -6,7 +6,7 @@ defmodule AOC.Day1 do
       import AOC.Day1
 
       def day1 do
-        case File.read("dataset.txt") do
+        case File.read("data/day1.txt") do
           {:ok, content} ->
             String.split(content, "\n")
             |> Enum.reject(&(&1 == ""))
