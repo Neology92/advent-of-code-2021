@@ -1,21 +1,6 @@
 defmodule AOC.Day3 do
   alias AOC.Dataset
 
-  @test_data [
-    "00100",
-    "11110",
-    "10101",
-    "10110",
-    "10111",
-    "01111",
-    "00111",
-    "11100",
-    "10000",
-    "11001",
-    "00010",
-    "01010"
-  ]
-
   def day3 do
     Dataset.read!("data/day3.txt")
     |> generate_rates

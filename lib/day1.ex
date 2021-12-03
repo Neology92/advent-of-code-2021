@@ -1,8 +1,6 @@
 defmodule AOC.Day1 do
   alias AOC.Dataset
 
-  @test_data [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]
-
   def day1 do
     Dataset.read!("data/day3.txt")
     |> Enum.map(&String.to_integer/1)
